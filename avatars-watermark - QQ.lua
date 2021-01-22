@@ -8,14 +8,14 @@ local qi_avatars_qq = "2878713023";
 print(qi_avatars_qq)
 ---------------------------------------
 local version = "版本 1.0"
-local version_url = "https://raw.githubusercontent.com/287871/zc-/main/ZC-VERSION.txt"
+local version_url = "https://github.com/287871/avatars-watermark/blob/main/VERSION.txt"
 
 -- Update
 http.Get(version_url, function(content)
 	if version == string.gsub(content, "[\r\n]", "") then
 		print("[头像水印] 最新版本")
 	else
-        local new_version = http.Get("https://raw.githubusercontent.com/287871/zc-/main/zc-.lua");
+        local new_version = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/avatars-watermark%20-%20QQ.lua");
         local old = file.Open(GetScriptName(), "w")
         old:Write(new_version)
         old:Close()
