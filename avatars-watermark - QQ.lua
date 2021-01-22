@@ -346,7 +346,7 @@ function drawavatars_qq()
     local r , g , b , a = 255, 255, 255, 255
     draw.Color(r , g , b , a)
     draw.SetTexture(texture)
-    draw.FilledRect(x-39, y-39, width-60+x, height-60.5+y)
+    draw.FilledRect(x-39, y-39, width-60+x, height-61+y)
 
     --号码牌
     local r , g , b , a = 80,163, 248, 50
