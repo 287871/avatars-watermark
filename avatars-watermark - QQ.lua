@@ -15,16 +15,15 @@ http.Get(version_url, function(content)
 		print("[头像水印] 最新版本")
 	else
         local new_version = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/avatars-watermark%20-%20QQ.lua");
+        local update_log = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/README.md");
         local old = file.Open(GetScriptName(), "w")
         old:Write(new_version)
         old:Close()
-		
-		print("[头像水印] 需要更新(重新加载即可)")
+        print("[头像水印] 需要更新(重新加载即可)")
+        print(update_log)
 		UnloadScript(GetScriptName())
 	end
 end)
-local update_log = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/README.md");
-print(update_log)
 --
 local X , Y = draw.GetScreenSize();
 local qi_avatars_qq_ui_Checkbox = gui.Checkbox( gui.Reference( "Visuals" , "Local" , "Camera" ), "qi_avatars_qq_ui", "图片水印", 0 );
