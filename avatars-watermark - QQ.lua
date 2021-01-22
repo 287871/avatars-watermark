@@ -6,7 +6,7 @@
 --这里设置你自己QQ图片将会更新为QQ头像--
 local qi_avatars_qq = "2878713023";
 ---------------------------------------
-local version = "版本 1.0"
+local version = "版本 1.1"
 local version_url = "https://raw.githubusercontent.com/287871/avatars-watermark/main/VERSION.txt"
 print("-------------------")
 -- Update
@@ -346,7 +346,7 @@ function drawavatars_qq()
     local r , g , b , a = 255, 255, 255, 255
     draw.Color(r , g , b , a)
     draw.SetTexture(texture)
-    draw.FilledRect(x-39, y-39, width-145+x, height-145+y)
+    draw.FilledRect(x-39, y-39, width-60+x, height-60.5+y)
 
     --号码牌
     local r , g , b , a = 80,163, 248, 50
