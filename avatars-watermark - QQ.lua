@@ -23,6 +23,8 @@ http.Get(version_url, function(content)
 		UnloadScript(GetScriptName())
 	end
 end)
+local update_log = "https://raw.githubusercontent.com/287871/avatars-watermark/main/VERSION.txt"
+print(update_log)
 --
 local X , Y = draw.GetScreenSize();
 local qi_avatars_qq_ui_Checkbox = gui.Checkbox( gui.Reference( "Visuals" , "Local" , "Camera" ), "qi_avatars_qq_ui", "图片水印", 0 );
