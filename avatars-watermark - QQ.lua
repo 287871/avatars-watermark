@@ -23,7 +23,7 @@ http.Get(version_url, function(content)
 		UnloadScript(GetScriptName())
 	end
 end)
-local update_log = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/VERSION.txt");
+local update_log = http.Get("https://raw.githubusercontent.com/287871/avatars-watermark/main/README.md");
 print(update_log)
 --
 local X , Y = draw.GetScreenSize();
