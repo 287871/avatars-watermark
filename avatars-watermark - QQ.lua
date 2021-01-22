@@ -421,7 +421,9 @@ function drawavatars_qq()
     draw.OutlinedCircle( x, y, 39.1 )
     draw.OutlinedCircle( x, y, 39 )
     local armor = localPlayer:GetProp("m_ArmorValue")
-
+    if armor > 50 then
+        armor =  armor-10
+    end 
     local r , g , b , a = 80,163, 248, 255
 
        local radius = 42
