@@ -129,30 +129,199 @@ function drawavatars_qq()
     draw.TextShadow( x+110, y+5, "$"..Money )
 
     --绘制底色1
+     --绘制底色1
     if hp > 35 then
      r , g , b , a = 134, 200, 134, 255
     else
      r , g , b , a = 255, 0, 0, 255   
     end
-    draw.Color( r , g , b, a )
-    draw.FilledCircle( x, y, 56.3 )
-    draw.Color( r , g , b, a*0.8 )
-    draw.FilledCircle( x, y, 56.4 )
-    draw.FilledCircle( x, y, 56.5 )
-    draw.Color( r , g , b, a*0.6 )
-    draw.FilledCircle( x, y, 56.6 )
-    draw.FilledCircle( x, y, 56.7 )
-    draw.FilledCircle( x, y, 56.8 )
-    draw.Color( r , g , b, a*0.4 )
-    draw.FilledCircle( x, y, 56.9 )
-    draw.FilledCircle( x, y, 57 )
-    draw.FilledCircle( x, y, 57.1 )
-    draw.FilledCircle( x, y, 57.2 )
-    draw.Color( r , g , b, a*0.2 )
-    draw.FilledCircle( x, y, 57.3 )
-    draw.FilledCircle( x, y, 57.4 )
-    draw.FilledCircle( x, y, 57.5 )
-    draw.FilledCircle( x, y, 57.6 )
+
+    local radius = 57.5
+    local thickness = 10
+    local ir, ig, ib, ia = r , g , b , a
+    if thickness > radius then
+        thickness = radius
+    end
+
+    local ang = (hp * -1)/2
+    for steps = 11, 100 do
+
+        local sin_cur = math.sin(math.rad(steps * 8 + 180))
+        local sin_old = math.sin(math.rad(steps * 8 - 8 + 180))
+        local cos_cur = math.cos(math.rad(steps * 8 + 180))
+        local cos_old = math.cos(math.rad(steps * 8 - 8 + 180))
+        local cur_point = nil;
+        local old_point = nil;
+
+        cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+        old_point = {x + sin_old * radius, y + cos_old * radius};
+
+        local cur_point2 = nil;
+        local old_point2 = nil;
+
+        cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+        old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+        
+        if steps >= ang - 1 and steps <= ang + 0.1 then
+            draw.Color(14, 14, 14, 10)
+        else
+            draw.Color(14, 14, 14, 10)
+        end
+        if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+            draw.Color(ir, ig, ib, ia-200)
+        end
+        draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+        draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+    end 
+    local radius = 57
+    local thickness = 4
+    local ir, ig, ib, ia = r , g , b , a
+    if thickness > radius then
+        thickness = radius
+    end
+
+    local ang = (hp * -1)/2
+    for steps = 11, 100 do
+
+        local sin_cur = math.sin(math.rad(steps * 8 + 180))
+        local sin_old = math.sin(math.rad(steps * 8 - 8 + 180))
+        local cos_cur = math.cos(math.rad(steps * 8 + 180))
+        local cos_old = math.cos(math.rad(steps * 8 - 8 + 180))
+        local cur_point = nil;
+        local old_point = nil;
+
+        cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+        old_point = {x + sin_old * radius, y + cos_old * radius};
+
+        local cur_point2 = nil;
+        local old_point2 = nil;
+
+        cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+        old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+        
+        if steps >= ang - 1 and steps <= ang + 0.1 then
+            draw.Color(14, 14, 14, 10)
+        else
+            draw.Color(14, 14, 14, 10)
+        end
+        if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+            draw.Color(ir, ig, ib, ia-10)
+        end
+        draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+        draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+    end 
+    local radius = 57.1
+    local thickness = 4
+    local ir, ig, ib, ia = r , g , b , a
+    if thickness > radius then
+        thickness = radius
+    end
+
+    local ang = (hp * -1)/2
+    for steps = 11, 100 do
+
+        local sin_cur = math.sin(math.rad(steps * 8 + 180))
+        local sin_old = math.sin(math.rad(steps * 8 - 8 + 180))
+        local cos_cur = math.cos(math.rad(steps * 8 + 180))
+        local cos_old = math.cos(math.rad(steps * 8 - 8 + 180))
+        local cur_point = nil;
+        local old_point = nil;
+
+        cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+        old_point = {x + sin_old * radius, y + cos_old * radius};
+
+        local cur_point2 = nil;
+        local old_point2 = nil;
+
+        cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+        old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+        
+        if steps >= ang - 1 and steps <= ang + 0.1 then
+            draw.Color(14, 14, 14, 10)
+        else
+            draw.Color(14, 14, 14, 10)
+        end
+        if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+            draw.Color(ir, ig, ib, ia-50)
+        end
+        draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+        draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+    end 
+    local radius = 57.2
+    local thickness = 5
+    local ir, ig, ib, ia = r , g , b , a
+    if thickness > radius then
+        thickness = radius
+    end
+
+    local ang = (hp * -1)/2
+    for steps = 11, 100 do
+
+        local sin_cur = math.sin(math.rad(steps * 8 + 180))
+        local sin_old = math.sin(math.rad(steps * 8 - 8 + 180))
+        local cos_cur = math.cos(math.rad(steps * 8 + 180))
+        local cos_old = math.cos(math.rad(steps * 8 - 8 + 180))
+        local cur_point = nil;
+        local old_point = nil;
+
+        cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+        old_point = {x + sin_old * radius, y + cos_old * radius};
+
+        local cur_point2 = nil;
+        local old_point2 = nil;
+
+        cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+        old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+        
+        if steps >= ang - 1 and steps <= ang + 0.1 then
+            draw.Color(14, 14, 14, 10)
+        else
+            draw.Color(14, 14, 14, 10)
+        end
+        if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+            draw.Color(ir, ig, ib, ia-100)
+        end
+        draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+        draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+    end 
+    local radius = 57.3
+    local thickness = 10
+    local ir, ig, ib, ia = r , g , b , a
+    if thickness > radius then
+        thickness = radius
+    end
+
+    local ang = (hp * -1)/2
+    for steps = 11, 100 do
+
+        local sin_cur = math.sin(math.rad(steps * 8 + 180))
+        local sin_old = math.sin(math.rad(steps * 8 - 8 + 180))
+        local cos_cur = math.cos(math.rad(steps * 8 + 180))
+        local cos_old = math.cos(math.rad(steps * 8 - 8 + 180))
+        local cur_point = nil;
+        local old_point = nil;
+
+        cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+        old_point = {x + sin_old * radius, y + cos_old * radius};
+
+        local cur_point2 = nil;
+        local old_point2 = nil;
+
+        cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+        old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+        
+        if steps >= ang - 1 and steps <= ang + 0.1 then
+            draw.Color(14, 14, 14, 10)
+        else
+            draw.Color(14, 14, 14, 10)
+        end
+        if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+            draw.Color(ir, ig, ib, ia-150)
+        end
+        draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+        draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+    end 
+
     --绘制底色2
     local r , g , b , a = 36, 36, 36, 255
     draw.Color( r , g , b, a )
@@ -177,7 +346,7 @@ function drawavatars_qq()
     local r , g , b , a = 255, 255, 255, 255
     draw.Color(r , g , b , a)
     draw.SetTexture(texture)
-    draw.FilledRect(x-39, y-39, width-60+x, height-62+y)
+    draw.FilledRect(x-39, y-39, width-145+x, height-145+y)
 
     --号码牌
     local r , g , b , a = 80,163, 248, 50
@@ -251,6 +420,233 @@ function drawavatars_qq()
     draw.OutlinedCircle( x, y, 39.2 )
     draw.OutlinedCircle( x, y, 39.1 )
     draw.OutlinedCircle( x, y, 39 )
+    local armor = localPlayer:GetProp("m_ArmorValue")
+
+    local r , g , b , a = 80,163, 248, 255
+
+       local radius = 42
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-150)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+       local radius = 42.2
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-150)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+       local radius = 42.5
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-10)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+       local radius = 42.7
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-100)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+       local radius = 42.7
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-150)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+       local radius = 42.9
+       local thickness = 0.8
+       local ir, ig, ib, ia = r , g , b , a
+       if thickness > radius then
+           thickness = radius
+       end
+   
+       local ang = (armor * -1)/2
+       for steps = 11, 100 do
+   
+           local sin_cur = math.sin(math.rad(steps * 8 + 360))
+           local sin_old = math.sin(math.rad(steps * 8 - 8 + 360))
+           local cos_cur = math.cos(math.rad(steps * 8 + 360))
+           local cos_old = math.cos(math.rad(steps * 8 - 8 + 360))
+           local cur_point = nil;
+           local old_point = nil;
+   
+           cur_point = {x + sin_cur * radius, y + cos_cur * radius};    
+           old_point = {x + sin_old * radius, y + cos_old * radius};
+   
+           local cur_point2 = nil;
+           local old_point2 = nil;
+   
+           cur_point2 = {x + sin_cur * (radius - thickness), y + cos_cur * (radius - thickness)};    
+           old_point2 = {x + sin_old * (radius - thickness), y + cos_old * (radius - thickness)};
+           
+           if steps >= ang - 1 and steps <= ang + 0.1 then
+               draw.Color(14, 14, 14, 10)
+           else
+               draw.Color(14, 14, 14, 10)
+           end
+           if ang - 1 < 0 and steps >= 102 + (ang - 1) then
+               draw.Color(ir, ig, ib, ia-150)
+           end
+           draw.Triangle(cur_point[1], cur_point[2], old_point[1], old_point[2], old_point2[1], old_point2[2])
+           draw.Triangle(cur_point2[1], cur_point2[2], old_point2[1], old_point2[2], cur_point[1], cur_point[2])      
+       end 
+
     end
     end
 end
